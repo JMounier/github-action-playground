@@ -13,3 +13,5 @@ jobs:
         run: echo "${GITHUB_REF}"
       - name: What is the Tag
         run: echo "${GITHUB_REF#refs/tags/}"
+      - name: What does git describe say
+        run: git describe --tags

@@ -1,0 +1,15 @@
+name: Deploy
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: What is the GITHUB_REF
+        run: echo "${GITHUB_REF}"
+      - name: What is the Tag
+        run: echo "${GITHUB_REF#refs/tags/}"
